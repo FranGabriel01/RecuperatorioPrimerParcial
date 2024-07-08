@@ -1,19 +1,11 @@
 import csv
 import random
 import json
-import os
-
-def clearconsole() -> None:
-    """
-    Esta función borra la pantalla de la consola en Python esperando la entrada del usuario y luego
-    llamando al comando 'cls' para borrar la pantalla.
-    """
-    _= input('Presione enter para continuar...')
-    os.system('cls')
-
 
 def mostrar_menu():
-    #Esta funcion se encarga de imprimir el menu
+    """
+    Esta funcion imprime el menu
+    """
     print("\nMenú:")
     print("1) Cargar archivo .CSV")
     print("2) Imprimir lista")

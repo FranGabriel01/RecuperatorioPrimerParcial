@@ -18,11 +18,6 @@ def mostrar_menu():
     print("9) Salir")
 
 
-
-import csv
-import random
-import json
-
 def cargar_csv(nombre_archivo):
     """
     Carga el contenido de un archivo CSV en una lista de diccionarios
@@ -90,12 +85,14 @@ def filtrar_por_genero(peliculas, genero):
 def ordenar_peliculas(peliculas):
     """
     Ordena las películas por género y rating descendente usando el método de burbujeo.
+    
     Recibe: Una lista de diccionarios donde cada diccionario representa una película.
+    
     Retorna: La lista de diccionarios de películas ordenada por género y rating descendente.
     """
-    n = len(peliculas)
-    for i in range(n):
-        for j in range(0, n-i-1):
+    cantidad_peliculas = len(peliculas)
+    for i in range(cantidad_peliculas):
+        for j in range(0, cantidad_peliculas-i-1):
             if (peliculas[j]['genero'] > peliculas[j+1]['genero']) or \
                (peliculas[j]['genero'] == peliculas[j+1]['genero'] and float(peliculas[j]['rating']) < float(peliculas[j+1]['rating'])):
                 peliculas[j], peliculas[j+1] = peliculas[j+1], peliculas[j]
@@ -106,8 +103,7 @@ def informar_mejor_rating(peliculas):
     Imprime el título y rating de la película con el mejor rating.
 
     Recibe: Una lista de diccionarios donde cada diccionario representa una película.
-    """
-# Verificar si hay películas cargadas
+    """ 
     if peliculas is not None and len(peliculas) > 0:
         mejor_rating = float(peliculas[0]['rating'])
         mejor_pelicula = peliculas[0]

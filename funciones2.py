@@ -28,9 +28,9 @@ def cargar_csv(nombre_archivo):
     """
     peliculas = []
     with open(nombre_archivo, mode='r', encoding='utf-8-sig') as file:
-        leer = csv.DictReader(file, fieldnames=["id_peli", "titulo", "genero", "rating"])
-        for row in leer:
-            peliculas.append(row)
+        archivo = csv.DictReader(file, fieldnames=["id_peli", "titulo", "genero", "rating"])
+        for linea in archivo:
+            peliculas.append(linea)
     return peliculas
 
 def imprimir_lista(peliculas):
